@@ -1,5 +1,7 @@
 # Bee Game
 
+[![CircleCI](https://circleci.com/gh/waxim/beesinthetrap.svg?style=svg)](https://circleci.com/gh/waxim/beesinthetrap)
+
 This is my simple implimenation of the PHP Coding Test "The Bee Game"
 
 __Bees__
