@@ -12,7 +12,7 @@ class BeeGameTest extends PHPUnit
      * One queen.
      * Hit 13
      * She should die.
-    */
+     */
     public function testProgress()
     {
         $hive = new \Game\Hive();
@@ -20,7 +20,7 @@ class BeeGameTest extends PHPUnit
 
         $game = new \Game\BeeGame($hive);
 
-        /**
+        /*
          * Don't look at my shame.
         */
         $game->progress();

@@ -6,10 +6,9 @@ use PHPUnit_Framework_TestCase as PHPUnit;
 
 class PlayTest extends PHPUnit
 {
-
     /**
      * Test game starts, awaiting first move.
-    */
+     */
     public function testGameStart()
     {
         $game = new \Game\Play();
@@ -17,8 +16,8 @@ class PlayTest extends PHPUnit
     }
 
     /**
-     * Test game moves along
-    */
+     * Test game moves along.
+     */
     public function testProgress()
     {
         $game = new \Game\Play();
@@ -28,12 +27,12 @@ class PlayTest extends PHPUnit
     }
 
     /**
-     * Test game log
-    */
+     * Test game log.
+     */
     public function testLog()
     {
         $game = new \Game\Play();
-        $tolog = ["Testing our game log."];
+        $tolog = ['Testing our game log.'];
         $game->log($tolog);
 
         $log = $game->getLastMessages();
@@ -42,8 +41,8 @@ class PlayTest extends PHPUnit
     }
 
     /**
-     * Test game over
-    */
+     * Test game over.
+     */
     public function testGameOver()
     {
         $game = new \Game\Play();
@@ -60,8 +59,8 @@ class PlayTest extends PHPUnit
     }
 
     /**
-     * Test restart game
-    */
+     * Test restart game.
+     */
     public function testRestartGame()
     {
         $game = new \Game\Play();
@@ -70,5 +69,4 @@ class PlayTest extends PHPUnit
         $game->restart();
         $this->assertEquals($game->getStatus(), \Game\Play::FIRST_MOVE);
     }
-
 }

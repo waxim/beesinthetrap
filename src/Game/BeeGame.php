@@ -18,7 +18,7 @@ class BeeGame extends Play
 
         $bee = $this->hive->random();
 
-        if($bee->isDead()) {
+        if ($bee->isDead()) {
             return false;
         }
 
@@ -26,17 +26,17 @@ class BeeGame extends Play
 
         $turn = [];
 
-        $turn[] = $bee->getName() . " bee was attacked with " . $bee->getDamage() . " and now " . ($bee->getLife() > 0 ? "has " . $bee->getLife() . " health left" : "is dead");
+        $turn[] = $bee->getName().' bee was attacked with '.$bee->getDamage().' and now '.($bee->getLife() > 0 ? 'has '.$bee->getLife().' health left' : 'is dead');
 
         if ($bee->isDead() && $bee->getBurnThemAll()) {
             $this->hive->burnThemAll();
-            $turn[] = $bee->getName() . " bee is dead, so the hive has been drestoryed.";
+            $turn[] = $bee->getName().' bee is dead, so the hive has been drestoryed.';
 
             $this->gameOver();
         }
 
         if ($this->isGameOver()) {
-            $turn[] = "All bees are dead, game over.";
+            $turn[] = 'All bees are dead, game over.';
         }
 
         $this->log($turn);

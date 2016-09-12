@@ -6,46 +6,47 @@ class Play
 {
     /**
      * Game over value.
-    */
+     */
     const GAME_OVER = 'game_over';
 
     /**
-     * Game active value
-    */
+     * Game active value.
+     */
     const IN_PLAY = 'active';
 
     /**
-     * Awating first move value
-    */
+     * Awating first move value.
+     */
     const FIRST_MOVE = 'first_move';
 
     /**
-     * Current status
-    */
+     * Current status.
+     */
     protected $status;
 
     /**
-     * Turn count
-    */
+     * Turn count.
+     */
     protected $turns = 0;
 
     /**
      * Game log.
-    */
+     */
     protected $log = [];
 
     /**
      * Await first move.
-    */
+     */
     public function __construct()
     {
         $this->status = self::FIRST_MOVE;
     }
 
     /**
-     * Run a turn of our game
-    */
-    public function progress(){
+     * Run a turn of our game.
+     */
+    public function progress()
+    {
         if ($this->status !== self::IN_PLAY) {
             $this->status = self::IN_PLAY;
         }
@@ -58,8 +59,8 @@ class Play
     }
 
     /**
-     * game over
-    */
+     * game over.
+     */
     public function gameOver()
     {
         $this->status = self::GAME_OVER;
@@ -67,7 +68,7 @@ class Play
 
     /**
      * Is game over?
-    */
+     */
     public function isGameOver()
     {
         return $this->status == self::GAME_OVER;
@@ -75,17 +76,17 @@ class Play
 
     /**
      * Restart our game.
-    */
+     */
     public function restart()
     {
-        $this->log[] = ["The game has been restarted."];
+        $this->log[] = ['The game has been restarted.'];
         $this->turns = 0;
         $this->status = self::FIRST_MOVE;
     }
 
     /**
      * How many turns have we had?
-    */
+     */
     public function turnCount()
     {
         return (int) $this->turns;
@@ -95,7 +96,7 @@ class Play
      * Add a message to our log.
      *
      * @param $message
-    */
+     */
     public function log($message)
     {
         $this->log[] = $message;
@@ -105,17 +106,17 @@ class Play
      * Returns the last message that made it into our log.
      *
      * @return array
-    */
+     */
     public function getLastMessages()
     {
         return end($this->log);
     }
 
     /**
-     * Get current game status
+     * Get current game status.
      *
      * @return string
-    */
+     */
     public function getStatus()
     {
         return $this->status;
