@@ -2,13 +2,13 @@
 
 namespace Game\Tests;
 
-use \PHPUnit_Framework_TestCase as PHPUnit;
+use PHPUnit_Framework_TestCase as PHPUnit;
 
 class HiveTest extends PHPUnit
 {
     /**
      * Test hive is empty, add one, test again.
-    */
+     */
     public function testHiveAdd()
     {
         $hive = new \Game\Hive();
@@ -21,7 +21,7 @@ class HiveTest extends PHPUnit
 
     /**
      * Test hive is empty, add one, test again.
-    */
+     */
     public function testRandom()
     {
         $hive = new \Game\Hive();
@@ -35,8 +35,8 @@ class HiveTest extends PHPUnit
     }
 
     /**
-     * Test burn them all
-    */
+     * Test burn them all.
+     */
     public function testBurnThemAll()
     {
         $hive = new \Game\Hive();
@@ -46,20 +46,20 @@ class HiveTest extends PHPUnit
 
         $this->assertCount(4, $hive->getAll());
 
-        foreach($hive->getAll() as $bee) {
+        foreach ($hive->getAll() as $bee) {
             $this->assertFalse($bee->isDead());
         }
 
         $hive->burnThemAll();
 
-        foreach($hive->getAll() as $bee) {
+        foreach ($hive->getAll() as $bee) {
             $this->assertTrue($bee->isDead());
         }
     }
 
     /**
-     * Test burn them all
-    */
+     * Test burn them all.
+     */
     public function testReset()
     {
         $hive = new \Game\Hive();
@@ -69,19 +69,19 @@ class HiveTest extends PHPUnit
 
         $this->assertCount(4, $hive->getAll());
 
-        foreach($hive->getAll() as $bee) {
+        foreach ($hive->getAll() as $bee) {
             $this->assertFalse($bee->isDead());
         }
 
         $hive->burnThemAll();
 
-        foreach($hive->getAll() as $bee) {
+        foreach ($hive->getAll() as $bee) {
             $this->assertTrue($bee->isDead());
         }
 
         $hive->reset();
 
-        foreach($hive->getAll() as $bee) {
+        foreach ($hive->getAll() as $bee) {
             $this->assertFalse($bee->isDead());
         }
     }

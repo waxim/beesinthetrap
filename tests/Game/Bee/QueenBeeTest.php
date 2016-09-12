@@ -2,13 +2,13 @@
 
 namespace Game\Tests;
 
-use \PHPUnit_Framework_TestCase as PHPUnit;
+use PHPUnit_Framework_TestCase as PHPUnit;
 
 class QueenBeeTest extends PHPUnit
 {
     /**
      * A queen bee should have 100 hp.
-    */
+     */
     public function testGetHp()
     {
         $hp = 100;
@@ -18,7 +18,7 @@ class QueenBeeTest extends PHPUnit
 
     /**
      * A queen bee should receive 8 damage.
-    */
+     */
     public function testGetDamage()
     {
         $damage = 8;
@@ -27,18 +27,18 @@ class QueenBeeTest extends PHPUnit
     }
 
     /**
-     * A queen bee have the name "Queen"
-    */
+     * A queen bee have the name "Queen".
+     */
     public function testGetName()
     {
-        $name = "Queen";
+        $name = 'Queen';
         $bee = new \Game\Bee\Queen();
         $this->assertEquals($bee->getName(), $name);
     }
 
     /**
      * A queen bee should kill all others.
-    */
+     */
     public function testBurnThemAll()
     {
         $bee = new \Game\Bee\Queen();
@@ -57,7 +57,7 @@ class QueenBeeTest extends PHPUnit
 
     /**
      * Test we can lose life.
-    */
+     */
     public function testDeath()
     {
         $bee = new \Game\Bee\Queen();
@@ -71,7 +71,7 @@ class QueenBeeTest extends PHPUnit
 
     /**
      * Test we're not dead yet.
-    */
+     */
     public function testAlive()
     {
         $bee = new \Game\Bee\Queen();
@@ -81,8 +81,8 @@ class QueenBeeTest extends PHPUnit
     }
 
     /**
-     * Test we're can terminate
-    */
+     * Test we're can terminate.
+     */
     public function testTerminate()
     {
         $bee = new \Game\Bee\Queen();
